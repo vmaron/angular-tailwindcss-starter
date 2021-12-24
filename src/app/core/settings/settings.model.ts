@@ -5,6 +5,7 @@ export interface SettingsState {
   isPagesMenuOpen: boolean;
   isSideMenuOpen: boolean;
   isNotificationsMenuOpen: boolean;
+  isProfileMenuOpen: boolean;
 }
 
 export interface State extends AppState {

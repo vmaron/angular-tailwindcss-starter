@@ -1,5 +1,5 @@
 import {SettingsState} from './settings.model';
-import {actionNotificationsMenu, actionSettingsDarkTheme, actionSettingsPagesMenu, actionSettingsSideMenu} from './settings.actions';
+import {actionOpenNotificationsMenu, actionOpenProfileMenu, actionChangeDarkTheme, actionOpenPagesMenu, actionOpenSideMenu} from './settings.actions';
 import {Action, createReducer, on} from '@ngrx/store';
 
 export const settingsFeatureKey = 'settings';
@@ -9,15 +9,17 @@ export const initialState: SettingsState = {
   isPagesMenuOpen: false,
   isSideMenuOpen: false,
   isNotificationsMenuOpen: false,
+  isProfileMenuOpen: false
 };
 
 const reducer = createReducer(
   initialState,
   on(
-    actionSettingsDarkTheme,
-    actionSettingsPagesMenu,
-    actionSettingsSideMenu,
-    actionNotificationsMenu,
+    actionChangeDarkTheme,
+    actionOpenPagesMenu,
+    actionOpenSideMenu,
+    actionOpenNotificationsMenu,
+    actionOpenProfileMenu,
     (state, action) => ({...state, ...action.payload})
   ),
 );

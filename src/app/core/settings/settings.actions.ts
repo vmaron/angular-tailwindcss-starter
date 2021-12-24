@@ -5,23 +5,30 @@ export const actionSettingsInitState = createAction(
   props<{ localStorageVersion: number }>()
 );
 
-export const actionSettingsDarkTheme = createAction(
+export const actionChangeDarkTheme = createAction(
   '[Settings] Change Theme',
   props<{ payload: { dark: boolean } }>()
 );
 
-export const actionSettingsPagesMenu = createAction(
+export const actionOpenPagesMenu = createAction(
   '[Settings] Pages Menu',
   props<{ payload: { isPagesMenuOpen: boolean } }>()
 );
 
-export const actionSettingsSideMenu = createAction(
+export const actionOpenSideMenu = createAction(
   '[Settings] Pages Menu',
   props<{ payload: { isSideMenuOpen: boolean } }>()
 );
 
-export const actionNotificationsMenu = createAction(
+export const actionOpenNotificationsMenu = createAction(
   '[Settings] Pages Menu',
   props<{ payload: { isNotificationsMenuOpen: boolean } }>()
 );
+
+export const actionOpenProfileMenu = createAction(
+  '[Settings] Profile Menu',
+  props<{ payload: { isProfileMenuOpen: boolean } }>()
+);
+
+
 

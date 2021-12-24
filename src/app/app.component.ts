@@ -1,7 +1,7 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {actionSettingsDarkTheme} from './core/settings/settings.actions';
-import {selectTheme} from './core/settings/settings.selectors';
+import {actionChangeDarkTheme, actionOpenNotificationsMenu, actionOpenPagesMenu, actionOpenProfileMenu, actionOpenSideMenu} from './core/settings/settings.actions';
+import {selectSettings, selectTheme} from './core/settings/settings.selectors';
 
 @Component({
   selector: 'app-root',
@@ -32,38 +32,45 @@ export class AppComponent implements OnInit {
         this._renderer.removeClass(document.body, 'theme-dark');
       }
     });
+    this.store.pipe(select(selectSettings)).subscribe((settings) => {
+      this.isPagesMenuOpen = settings.isPagesMenuOpen;
+      this.isNotificationsMenuOpen = settings.isNotificationsMenuOpen;
+      this.isSideMenuOpen = settings.isSideMenuOpen;
+      this.isNotificationsMenuOpen = settings.isNotificationsMenuOpen;
+      this.isProfileMenuOpen = settings.isProfileMenuOpen;
+    });
   }
 
 
   togglePagesMenu(): void {
-    this.isPagesMenuOpen = !this.isPagesMenuOpen;
+    this.store.dispatch(actionOpenPagesMenu({payload: {isPagesMenuOpen: !this.isPagesMenuOpen}}));
   }
 
   closeSideMenu(): void {
-    this.isSideMenuOpen = false;
+    this.store.dispatch(actionOpenSideMenu({payload: {isSideMenuOpen: false}}));
   }
 
   toggleSideMenu(): void {
-    this.isSideMenuOpen = !this.isSideMenuOpen;
+    this.store.dispatch(actionOpenSideMenu({payload: {isSideMenuOpen: !this.isSideMenuOpen}}));
   }
 
   toggleNotificationsMenu() {
-    this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen;
+    this.store.dispatch(actionOpenNotificationsMenu({payload: {isNotificationsMenuOpen: !this.isNotificationsMenuOpen}}));
   }
 
   closeNotificationsMenu() {
-    this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen;
+    this.store.dispatch(actionOpenNotificationsMenu({payload: {isNotificationsMenuOpen: false}}));
   }
 
   toggleTheme() {
-    this.store.dispatch(actionSettingsDarkTheme({payload: {dark: !this.dark}}));
+    this.store.dispatch(actionChangeDarkTheme({payload: {dark: !this.dark}}));
   }
 
   toggleProfileMenu() {
-    this.isProfileMenuOpen = !this.isProfileMenuOpen;
+    this.store.dispatch(actionOpenProfileMenu({payload: {isProfileMenuOpen: !this.isProfileMenuOpen}}));
   }
 
   closeProfileMenu() {
-    this.isProfileMenuOpen = false;
+    this.store.dispatch(actionOpenProfileMenu({payload: {isProfileMenuOpen: false}}));
   }
 }

@@ -5,7 +5,7 @@ import {selectSettingsState} from '../core.state';
 import {LocalStorageService} from '../local-storage/local-storage.service';
 import {SettingsState, State} from './settings.model';
 import {tap, withLatestFrom} from 'rxjs/operators';
-import {actionSettingsDarkTheme, actionSettingsInitState} from './settings.actions';
+import {actionChangeDarkTheme, actionSettingsInitState} from './settings.actions';
 
 export const SETTINGS_KEY = 'SETTINGS';
 
@@ -29,7 +29,7 @@ export class SettingsEffects {
             const storageSettings: SettingsState = this.localStorageService.getItem(SETTINGS_KEY);
             if (storageSettings) {
               const {dark} = storageSettings;
-              this.store.dispatch(actionSettingsDarkTheme({payload: {dark}}));
+              this.store.dispatch(actionChangeDarkTheme({payload: {dark}}));
             } else {
               this.localStorageService.setItem(SETTINGS_KEY, settings);
             }
@@ -43,7 +43,7 @@ export class SettingsEffects {
     () =>
       this.actions$.pipe(
         ofType(
-          actionSettingsDarkTheme
+          actionChangeDarkTheme
         ),
         withLatestFrom(this.store.pipe(select(selectSettingsState))),
         tap(([action, settings]) =>
