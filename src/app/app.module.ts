@@ -9,10 +9,11 @@ import {ClickStopPropagation} from '../directives/click-stop-propagation.directi
 import {CoreModule} from './core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {SidenavComponent} from './layout/sidenav/sidenav.component';
+import {HeaderComponent} from './layout/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ClickOutsideDirective, ClickStopPropagation, SidenavComponent
+    AppComponent, ClickOutsideDirective, ClickStopPropagation, SidenavComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
