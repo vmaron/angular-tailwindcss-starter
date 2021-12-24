@@ -13,6 +13,7 @@ import {HeaderComponent} from './layout/header/header.component';
 import {SearchInputComponent} from '@shared/components/search-input/search-input.component';
 import {ProfileMenuComponent} from './layout/profile-menu/profile-menu.component';
 import {NotificationsMenuComponent} from './layout/notifications-menu/notifications-menu.component';
+import {ThemeTogglerComponent} from './layout/theme-toggler/theme-toggler.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {NotificationsMenuComponent} from './layout/notifications-menu/notificati
     HeaderComponent,
     SearchInputComponent,
     ProfileMenuComponent,
-    NotificationsMenuComponent
+    NotificationsMenuComponent,
+    ThemeTogglerComponent
   ],
   imports: [
     BrowserModule,
