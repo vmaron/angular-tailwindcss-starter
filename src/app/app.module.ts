@@ -10,10 +10,16 @@ import {CoreModule} from './core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {SidenavComponent} from './layout/sidenav/sidenav.component';
 import {HeaderComponent} from './layout/header/header.component';
+import {SearchInputComponent} from './shared/components/search-input/search-input.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ClickOutsideDirective, ClickStopPropagation, SidenavComponent, HeaderComponent
+    AppComponent,
+    ClickOutsideDirective,
+    ClickStopPropagation,
+    SidenavComponent,
+    HeaderComponent,
+    SearchInputComponent
   ],
   imports: [
     BrowserModule,
