@@ -6,11 +6,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {ClickOutsideDirective} from '../directives/click-outside.directive';
 import {ClickStopPropagation} from '../directives/click-stop-propagation.directive';
-import {CoreModule} from './core/core.module';
+import {CoreModule} from '@core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {SidenavComponent} from './layout/sidenav/sidenav.component';
 import {HeaderComponent} from './layout/header/header.component';
-import {SearchInputComponent} from './shared/components/search-input/search-input.component';
+import {SearchInputComponent} from '@shared/components/search-input/search-input.component';
+import {ProfileMenuComponent} from './layout/profile-menu/profile-menu.component';
+import {NotificationsMenuComponent} from './layout/notifications-menu/notifications-menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {SearchInputComponent} from './shared/components/search-input/search-inpu
     ClickStopPropagation,
     SidenavComponent,
     HeaderComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    ProfileMenuComponent,
+    NotificationsMenuComponent
   ],
   imports: [
     BrowserModule,

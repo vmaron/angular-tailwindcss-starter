@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {selectSettings} from '../../core/settings/settings.selectors';
-import {actionOpenPagesMenu} from '../../core/settings/settings.actions';
+import {selectSettings} from '@core/settings/settings.selectors';
+import {actionOpenPagesMenu} from '@core/settings/settings.actions';
 
 @Component({
   selector: 'app-sidenav',

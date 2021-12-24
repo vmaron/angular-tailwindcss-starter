@@ -4,6 +4,12 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "resolveJsonModule": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "@core/*": ["app/core/*"],
+      "@shared/*": ["app/shared/*"],
+      "@environments/*": ["environments/*"]
+    },
     "types": []
   },
   "files": [
