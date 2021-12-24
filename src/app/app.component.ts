@@ -10,7 +10,6 @@ import {selectSettings, selectTheme} from './core/settings/settings.selectors';
 })
 export class AppComponent implements OnInit {
   title = 'angular-material-tailwindcss';
-  isPagesMenuOpen: boolean;
   isSideMenuOpen: boolean;
   isNotificationsMenuOpen: boolean;
   isProfileMenuOpen: boolean;
@@ -33,17 +32,11 @@ export class AppComponent implements OnInit {
       }
     });
     this.store.pipe(select(selectSettings)).subscribe((settings) => {
-      this.isPagesMenuOpen = settings.isPagesMenuOpen;
       this.isNotificationsMenuOpen = settings.isNotificationsMenuOpen;
       this.isSideMenuOpen = settings.isSideMenuOpen;
       this.isNotificationsMenuOpen = settings.isNotificationsMenuOpen;
       this.isProfileMenuOpen = settings.isProfileMenuOpen;
     });
-  }
-
-
-  togglePagesMenu(): void {
-    this.store.dispatch(actionOpenPagesMenu({payload: {isPagesMenuOpen: !this.isPagesMenuOpen}}));
   }
 
   closeSideMenu(): void {
