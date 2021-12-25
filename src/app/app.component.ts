@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from '@ngrx/store';
-import {actionOpenSideMenu} from '@core/settings/settings.actions';
-import {selectSettings} from '@core/settings/settings.selectors';
+import {Store} from '@ngrx/store';
+import {ActivatedRoute, NavigationEnd, Router, RoutesRecognized} from '@angular/router';
+import {LayoutType} from '@core/settings/settings.model';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +9,30 @@ import {selectSettings} from '@core/settings/settings.selectors';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'angular-material-tailwindcss';
-  isSideMenuOpen: boolean;
+  private routeData;
 
-  constructor(private store: Store) {
+  layout: string;
+  sidenavLayoutType: LayoutType = LayoutType.Sidenav;
+  emptyLayoutType: LayoutType = LayoutType.Empty;
+
+  constructor(
+    private store: Store,
+    private route: ActivatedRoute,
+    private router: Router) {
   }
 
   ngOnInit(): void {
-    this.store.pipe(select(selectSettings)).subscribe((settings) => {
-      this.isSideMenuOpen = settings.isSideMenuOpen;
-    });
-  }
 
-  closeSideMenu(): void {
-    this.store.dispatch(actionOpenSideMenu({payload: {isSideMenuOpen: false}}));
+    this.router.events.subscribe((data) => {
+      if (data instanceof RoutesRecognized) {
+        this.routeData = data.state.root.firstChild.data;
+      }
+    });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.layout = this.routeData.layout;
+      }
+    });
   }
 }

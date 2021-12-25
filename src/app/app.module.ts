@@ -14,6 +14,8 @@ import {SearchInputComponent} from '@shared/components/search-input/search-input
 import {ProfileMenuComponent} from './layout/profile-menu/profile-menu.component';
 import {NotificationsMenuComponent} from './layout/notifications-menu/notifications-menu.component';
 import {ThemeTogglerComponent} from './layout/theme-toggler/theme-toggler.component';
+import {SidenavLayoutComponent} from './layout/sidenav-layout/sidenav-layout.component';
+import {EmptyLayoutComponent} from './layout/empty-layout/empty-layout.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {ThemeTogglerComponent} from './layout/theme-toggler/theme-toggler.compon
     SearchInputComponent,
     ProfileMenuComponent,
     NotificationsMenuComponent,
-    ThemeTogglerComponent
+    ThemeTogglerComponent,
+    SidenavLayoutComponent,
+    EmptyLayoutComponent
   ],
   imports: [
     BrowserModule,

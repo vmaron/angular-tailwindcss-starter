@@ -6,11 +6,11 @@ import {TablesComponent} from './pages/tables/tables.component';
 import {ButtonsComponent} from './pages/buttons/buttons.component';
 
 const routes: Routes = [
-  {path: '', component: NotFoundComponent},
-  {path: 'tables', component: TablesComponent},
-  {path: 'buttons', component: ButtonsComponent},
-  {path: 'blank', component: BlankComponent},
-  {path: '404', component: NotFoundComponent}
+  {path: '', component: BlankComponent, data: {title: 'Home'}},
+  {path: 'tables', component: TablesComponent, data: {title: 'Tables'}},
+  {path: 'buttons', component: ButtonsComponent, data: {title: 'Buttons'}},
+  {path: 'blank', component: BlankComponent, data: {title: 'Blank'}},
+  {path: '404', component: NotFoundComponent, data: {title: 'Page not found'}}
 ];
 
 @NgModule({
