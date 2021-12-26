@@ -16,6 +16,7 @@ import {NotificationsMenuComponent} from './layout/notifications-menu/notificati
 import {ThemeTogglerComponent} from './layout/theme-toggler/theme-toggler.component';
 import {SidenavLayoutComponent} from './layout/sidenav-layout/sidenav-layout.component';
 import {EmptyLayoutComponent} from './layout/empty-layout/empty-layout.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {EmptyLayoutComponent} from './layout/empty-layout/empty-layout.component
     AppRoutingModule,
     MatButtonModule,
     CoreModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
