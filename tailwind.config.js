@@ -177,18 +177,6 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
-      fontSize: {
-        xs: '0.75rem',
-        sm: '1rem',
-        base: '1.1rem',
-        lg: '1.125rem',
-        xl: '1.25rem',
-        '2xl': '1.5rem',
-        '3xl': '1.875rem',
-        '4xl': '2.25rem',
-        '5xl': '3rem',
-        '6xl': '4rem',
-      },
     },
   },
   variants: {
@@ -218,9 +206,46 @@ module.exports = {
     divideColor: ['dark'],
     boxShadow: ['focus', 'dark:focus'],
   },
+  daisyui: {
+    themes: [
+      {
+        // first one will be the default theme
+        'mytheme': {
+          'primary' : '#7e3af2',           /* Primary color */
+          'primary-focus' : '#6c2bd9',     /* Primary color - focused */
+          'primary-content' : '#ffffff',   /* Foreground content color to use on primary color */
+
+          'secondary' : '#f6d860',         /* Secondary color */
+          'secondary-focus' : '#f3cc30',   /* Secondary color - focused */
+          'secondary-content' : '#ffffff', /* Foreground content color to use on secondary color */
+
+          'accent' : '#37cdbe',            /* Accent color */
+          'accent-focus' : '#2aa79b',      /* Accent color - focused */
+          'accent-content' : '#ffffff',    /* Foreground content color to use on accent color */
+
+          'neutral' : '#3d4451',           /* Neutral color */
+          'neutral-focus' : '#2a2e37',     /* Neutral color - focused */
+          'neutral-content' : '#ffffff',   /* Foreground content color to use on neutral color */
+
+          'base-100' : '#ffffff',          /* Base color of page, used for blank backgrounds */
+          'base-200' : '#f9fafb',          /* Base color, a little darker */
+          'base-300' : '#d1d5db',          /* Base color, even more darker */
+          'base-content' : '#1f2937',      /* Foreground content color to use on base color */
+
+          'info' : '#2094f3',              /* Info */
+          'success' : '#009485',           /* Success */
+          'warning' : '#ff9900',           /* Warning */
+          'error' : '#ff5724',             /* Error */
+        },
+      },
+      'dark'
+    ],
+  },
   plugins: [
     require('tailwindcss-multi-theme'),
     require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/typography'),
+    require('daisyui'),
     plugin(({ addUtilities, e, theme, variants }) => {
       const newUtilities = {}
       Object.entries(theme('colors')).map(([name, value]) => {

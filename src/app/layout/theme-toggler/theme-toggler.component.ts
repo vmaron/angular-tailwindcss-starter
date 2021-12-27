@@ -19,8 +19,10 @@ export class ThemeTogglerComponent implements OnInit {
       this.dark = dark;
       if (this.dark) {
         this._renderer.addClass(document.body, 'theme-dark');
+        this._renderer.setAttribute(document.body, 'data-theme', 'dark');
       } else {
         this._renderer.removeClass(document.body, 'theme-dark');
+        this._renderer.removeAttribute(document.body, 'data-theme');
       }
     });
   }
