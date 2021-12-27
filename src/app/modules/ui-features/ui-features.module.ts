@@ -6,6 +6,8 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {BlankComponent} from './pages/blank/blank.component';
 import {ButtonsComponent} from './pages/buttons/buttons.component';
 import {TablesComponent} from './pages/tables/tables.component';
+import {FormsComponent} from './pages/forms/forms.component';
+import {CardsComponent} from './pages/cards/cards.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import {TablesComponent} from './pages/tables/tables.component';
     NotFoundComponent,
     BlankComponent,
     TablesComponent,
-    ButtonsComponent],
+    ButtonsComponent,
+    FormsComponent,
+    CardsComponent],
   imports: [
     CommonModule,
     UiFeaturesRoutingModule

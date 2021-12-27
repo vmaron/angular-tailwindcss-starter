@@ -4,10 +4,14 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {BlankComponent} from './pages/blank/blank.component';
 import {TablesComponent} from './pages/tables/tables.component';
 import {ButtonsComponent} from './pages/buttons/buttons.component';
+import {FormsComponent} from './pages/forms/forms.component';
+import {CardsComponent} from './pages/cards/cards.component';
 
 const routes: Routes = [
   {path: '', component: BlankComponent, data: {title: 'Home'}},
   {path: 'tables', component: TablesComponent, data: {title: 'Tables'}},
+  {path: 'forms', component: FormsComponent, data: {title: 'Forms'}},
+  {path: 'cards', component: CardsComponent, data: {title: 'Cards'}},
   {path: 'buttons', component: ButtonsComponent, data: {title: 'Buttons'}},
   {path: 'blank', component: BlankComponent, data: {title: 'Blank'}},
   {path: '404', component: NotFoundComponent, data: {title: 'Page not found'}}

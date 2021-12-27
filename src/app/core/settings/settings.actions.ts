@@ -11,22 +11,22 @@ export const actionChangeDarkTheme = createAction(
 );
 
 export const actionOpenPagesMenu = createAction(
-  '[Settings] Pages Menu',
+  '[Settings] Open Pages Menu',
   props<{ payload: { isPagesMenuOpen: boolean } }>()
 );
 
 export const actionOpenSideMenu = createAction(
-  '[Settings] Pages Menu',
+  '[Settings] Open Side Menu',
   props<{ payload: { isSideMenuOpen: boolean } }>()
 );
 
 export const actionOpenNotificationsMenu = createAction(
-  '[Settings] Pages Menu',
+  '[Settings] Open Notifications Menu',
   props<{ payload: { isNotificationsMenuOpen: boolean } }>()
 );
 
 export const actionOpenProfileMenu = createAction(
-  '[Settings] Profile Menu',
+  '[Settings] Open Profile Menu',
   props<{ payload: { isProfileMenuOpen: boolean } }>()
 );
 

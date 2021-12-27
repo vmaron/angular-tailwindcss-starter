@@ -18,9 +18,15 @@ const reducer = createReducer(
     actionChangeDarkTheme,
     actionOpenPagesMenu,
     actionOpenSideMenu,
-    actionOpenNotificationsMenu,
-    actionOpenProfileMenu,
     (state, action) => ({...state, ...action.payload})
+  ),
+  on(
+    actionOpenProfileMenu,
+    (state, action) => ({...state, ...action.payload, isNotificationsMenuOpen: false})
+  ),
+  on(
+    actionOpenNotificationsMenu,
+    (state, action) => ({...state, ...action.payload, isProfileMenuOpen: false})
   ),
 );
 
