@@ -5,10 +5,10 @@ import {CreateAccountComponent} from './pages/create-account/create-account.comp
 import {ForgotPasswordComponent} from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent, data: {title: 'Login'}},
   {path: 'login', component: LoginComponent, data: {title: 'Login'}},
   {path: 'forgot-password', component: ForgotPasswordComponent, data: {title: 'Forgot Password'}},
   {path: 'create-account', component: CreateAccountComponent, data: {title: 'Create Account'}},
+  {path: '**', redirectTo: 'login'}
 ];
 
 @NgModule({

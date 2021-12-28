@@ -10,6 +10,7 @@ import {FormsComponent} from './pages/forms/forms.component';
 import {CardsComponent} from './pages/cards/cards.component';
 import {ChartsComponent} from './pages/charts/charts.component';
 import {ChartingModule} from '../charting/charting.module';
+import {TableComponent} from './components/table/table.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {ChartingModule} from '../charting/charting.module';
     ButtonsComponent,
     FormsComponent,
     CardsComponent,
-    ChartsComponent],
+    ChartsComponent,
+    TableComponent],
   imports: [
     CommonModule,
     UiFeaturesRoutingModule,

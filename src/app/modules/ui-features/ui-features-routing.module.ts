@@ -9,14 +9,14 @@ import {CardsComponent} from './pages/cards/cards.component';
 import {ChartsComponent} from './pages/charts/charts.component';
 
 const routes: Routes = [
-  {path: '', component: BlankComponent, data: {title: 'Home'}},
   {path: 'tables', component: TablesComponent, data: {title: 'Tables'}},
   {path: 'forms', component: FormsComponent, data: {title: 'Forms'}},
   {path: 'charts', component: ChartsComponent, data: {title: 'Charts'}},
   {path: 'cards', component: CardsComponent, data: {title: 'Cards'}},
   {path: 'buttons', component: ButtonsComponent, data: {title: 'Buttons'}},
   {path: 'blank', component: BlankComponent, data: {title: 'Blank'}},
-  {path: '404', component: NotFoundComponent, data: {title: 'Page not found'}}
+  {path: '404', component: NotFoundComponent, data: {title: 'Page not found'}},
+  {path: '**', redirectTo: '404'}
 ];
 
 @NgModule({

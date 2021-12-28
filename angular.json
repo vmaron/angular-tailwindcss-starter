@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "angular2-chartjs"
+            ],
             "outputPath": "dist/angular-tailwindcss-starter",
             "index": "src/index.html",
             "main": "src/main.ts",
