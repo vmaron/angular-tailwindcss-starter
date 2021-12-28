@@ -11,6 +11,7 @@ import {CardsComponent} from './pages/cards/cards.component';
 import {ChartsComponent} from './pages/charts/charts.component';
 import {ChartingModule} from '../charting/charting.module';
 import {TableComponent} from './components/table/table.component';
+import {LegendValueCardComponent} from './components/legend-value-card/legend-value-card.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {TableComponent} from './components/table/table.component';
     FormsComponent,
     CardsComponent,
     ChartsComponent,
-    TableComponent],
+    TableComponent,
+    LegendValueCardComponent],
   imports: [
     CommonModule,
     UiFeaturesRoutingModule,
