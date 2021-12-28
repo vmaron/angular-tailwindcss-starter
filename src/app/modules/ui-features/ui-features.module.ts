@@ -8,6 +8,7 @@ import {ButtonsComponent} from './pages/buttons/buttons.component';
 import {TablesComponent} from './pages/tables/tables.component';
 import {FormsComponent} from './pages/forms/forms.component';
 import {CardsComponent} from './pages/cards/cards.component';
+import {ChartsComponent} from './pages/charts/charts.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {CardsComponent} from './pages/cards/cards.component';
     TablesComponent,
     ButtonsComponent,
     FormsComponent,
-    CardsComponent],
+    CardsComponent,
+    ChartsComponent],
   imports: [
     CommonModule,
     UiFeaturesRoutingModule
