@@ -8,10 +8,12 @@ import {FormsComponent} from './pages/forms/forms.component';
 import {CardsComponent} from './pages/cards/cards.component';
 import {ChartsComponent} from './pages/charts/charts.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {ModalsComponent} from './pages/modals/modals.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'}},
   {path: 'tables', component: TablesComponent, data: {title: 'Tables'}},
+  {path: 'modals', component: ModalsComponent, data: {title: 'Modal'}},
   {path: 'forms', component: FormsComponent, data: {title: 'Forms'}},
   {path: 'charts', component: ChartsComponent, data: {title: 'Charts'}},
   {path: 'cards', component: CardsComponent, data: {title: 'Cards'}},
