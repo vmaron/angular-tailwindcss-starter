@@ -7,8 +7,10 @@ import {ButtonsComponent} from './pages/buttons/buttons.component';
 import {FormsComponent} from './pages/forms/forms.component';
 import {CardsComponent} from './pages/cards/cards.component';
 import {ChartsComponent} from './pages/charts/charts.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
+  {path: 'dashboard', component: DashboardComponent, data: {title: 'Dashboard'}},
   {path: 'tables', component: TablesComponent, data: {title: 'Tables'}},
   {path: 'forms', component: FormsComponent, data: {title: 'Forms'}},
   {path: 'charts', component: ChartsComponent, data: {title: 'Charts'}},
