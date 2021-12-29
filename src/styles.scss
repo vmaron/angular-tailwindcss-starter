@@ -2,6 +2,36 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-/*
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+
+
+@layer components {
+  /* Simple Card */
+  .simple-card {
+    @apply min-w-0 p-4 bg-white rounded-lg shadow-xs;
+  }
+  .theme-dark .simple-card {
+    @apply bg-gray-800;
+  }
+
+  .simple-card__title {
+    @apply mb-4 font-semibold text-gray-600;
+  }
+  .theme-dark .simple-card__title {
+    @apply text-gray-300;
+  }
+
+  .simple-card__body {
+    @apply text-gray-600;
+  }
+  .theme-dark .simple-card__body {
+    @apply text-gray-400;
+  }
+
+  /* Inverse Card */
+  .inverse-card {
+    @apply min-w-0 p-4 text-white bg-purple-600 rounded-lg shadow-xs;
+  }
+  .inverse-card__title {
+    @apply mb-4 font-semibold;
+  }
+}
