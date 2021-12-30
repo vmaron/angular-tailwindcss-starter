@@ -14,6 +14,9 @@ import {TableComponent} from './components/table/table.component';
 import {LegendValueCardComponent} from './components/legend-value-card/legend-value-card.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {ModalsComponent} from './pages/modals/modals.component';
+import {ModalModule} from '../modal/modal.module';
+import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NewsletterModalComponent} from './components/newsletter-modal/newsletter-modal.component';
 
 
 @NgModule({
@@ -28,12 +31,17 @@ import {ModalsComponent} from './pages/modals/modals.component';
     TableComponent,
     LegendValueCardComponent,
     DashboardComponent,
-    ModalsComponent],
+    ModalsComponent,
+    NewsletterModalComponent],
   imports: [
     CommonModule,
     UiFeaturesRoutingModule,
     ChartingModule,
-  ]
+    ModalModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [FormBuilder]
 })
 export class UiFeaturesModule {
 }

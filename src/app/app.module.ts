@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
 import {ClickOutsideDirective} from '../directives/click-outside.directive';
 import {ClickStopPropagation} from '../directives/click-stop-propagation.directive';
 import {CoreModule} from '@core/core.module';
@@ -16,7 +15,8 @@ import {NotificationsMenuComponent} from './layout/notifications-menu/notificati
 import {ThemeTogglerComponent} from './layout/theme-toggler/theme-toggler.component';
 import {SidenavLayoutComponent} from './layout/sidenav-layout/sidenav-layout.component';
 import {EmptyLayoutComponent} from './layout/empty-layout/empty-layout.component';
-import {MatIconModule} from '@angular/material/icon';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -36,9 +36,9 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
     CoreModule,
-    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

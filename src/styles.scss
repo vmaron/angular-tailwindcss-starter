@@ -34,4 +34,10 @@
   .inverse-card__title {
     @apply mb-4 font-semibold;
   }
+
+  button {
+    &:disabled {
+      @apply opacity-50 cursor-not-allowed;
+    }
+  }
 }
