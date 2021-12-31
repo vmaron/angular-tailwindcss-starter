@@ -14,9 +14,9 @@ import {TableComponent} from './components/table/table.component';
 import {LegendValueCardComponent} from './components/legend-value-card/legend-value-card.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {ModalsComponent} from './pages/modals/modals.component';
-import {ModalModule} from '../modal/modal.module';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NewsletterModalComponent} from './components/newsletter-modal/newsletter-modal.component';
+import {DialogsModule} from '../dialogs/dialogs.module';
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import {NewsletterModalComponent} from './components/newsletter-modal/newsletter
     CommonModule,
     UiFeaturesRoutingModule,
     ChartingModule,
-    ModalModule,
+    DialogsModule,
     FormsModule,
     ReactiveFormsModule
   ],

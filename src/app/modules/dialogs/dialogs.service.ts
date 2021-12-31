@@ -1,9 +1,9 @@
 import {ApplicationRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Injectable, Injector, Type} from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ModalService<T> {
+export class DialogsService<T> {
   private componentRef: ComponentRef<T> | undefined;
 
   constructor(
@@ -38,3 +38,4 @@ export class ModalService<T> {
     this.componentRef = undefined;
   }
 }
+

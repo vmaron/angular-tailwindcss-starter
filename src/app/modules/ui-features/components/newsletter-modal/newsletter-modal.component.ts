@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ModalComponent} from '../../../modal/component/modal.component';
+import {ModalComponent} from '../../../dialogs/components/modal/modal.component';
+
 
 @Component({
   selector: 'app-newsletter-modal',

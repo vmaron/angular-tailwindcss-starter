@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {ModalService} from '../modal.service';
+import {DialogsService} from '../../dialogs.service';
+
 
 @Component({
   selector: 'app-modal',
@@ -9,11 +10,11 @@ import {ModalService} from '../modal.service';
 export class ModalComponent<T> {
   display = true;
 
-  constructor(private modalService: ModalService<T>) {
+  constructor(private dialogsService: DialogsService<T>) {
   }
 
   async close(): Promise<void> {
     this.display = false;
-    await this.modalService.close();
+    await this.dialogsService.close();
   }
 }

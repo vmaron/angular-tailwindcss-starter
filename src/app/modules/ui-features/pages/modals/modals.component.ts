@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalService} from '../../../modal/modal.service';
 import {NewsletterModalComponent} from '../../components/newsletter-modal/newsletter-modal.component';
+import {DialogsService} from '../../../dialogs/dialogs.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import {NewsletterModalComponent} from '../../components/newsletter-modal/newsle
   styleUrls: ['./modals.component.scss']
 })
 export class ModalsComponent implements OnInit {
-  constructor(private modalService: ModalService<NewsletterModalComponent>) {
+  constructor(private dialogsService: DialogsService<NewsletterModalComponent>) {
   }
 
   ngOnInit(): void {
@@ -19,6 +19,6 @@ export class ModalsComponent implements OnInit {
     const {NewsletterModalComponent} = await import(
       '../../components/newsletter-modal/newsletter-modal.component'
       );
-    await this.modalService.open(NewsletterModalComponent);
+    await this.dialogsService.open(NewsletterModalComponent);
   }
 }
