@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {DialogsService} from '../../dialogs.service';
 
 
@@ -9,6 +9,7 @@ import {DialogsService} from '../../dialogs.service';
 })
 export class ModalComponent<T> {
   display = true;
+  @Input() title: string;
 
   constructor(private dialogsService: DialogsService<T>) {
   }
