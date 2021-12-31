@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DialogsService} from '../../dialogs.service';
 
 @Component({
@@ -8,6 +8,7 @@ import {DialogsService} from '../../dialogs.service';
 })
 export class DrawerComponent<T> implements OnInit {
   display = true;
+  @Input() title: string;
 
   constructor(private dialogsService: DialogsService<T>) {
   }

@@ -9,10 +9,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class NewsletterDrawerComponent implements OnInit {
 
-  @ViewChild('modalComponent') modal:
-    | ModalComponent<NewsletterDrawerComponent>
-    | undefined;
-
+  @ViewChild('drawerComponent') modal: | ModalComponent<NewsletterDrawerComponent> | undefined;
   newsletterForm: FormGroup;
 
   constructor(
