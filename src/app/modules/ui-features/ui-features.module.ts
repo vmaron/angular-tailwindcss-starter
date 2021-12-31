@@ -13,10 +13,12 @@ import {ChartingModule} from '../charting/charting.module';
 import {TableComponent} from './components/table/table.component';
 import {LegendValueCardComponent} from './components/legend-value-card/legend-value-card.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
-import {ModalsComponent} from './pages/modals/modals.component';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NewsletterModalComponent} from './components/newsletter-modal/newsletter-modal.component';
 import {DialogsModule} from '../dialogs/dialogs.module';
+import {NewsletterModalComponent} from './components/newsletter-modal/newsletter-modal.component';
+import {NewsletterDrawerComponent} from './components/newsletter-drawer/newsletter-drawer.component';
+import {ModalsComponent} from './pages/modals/modals.component';
+import {DrawersComponent} from './pages/drawers/drawers.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import {DialogsModule} from '../dialogs/dialogs.module';
     LegendValueCardComponent,
     DashboardComponent,
     ModalsComponent,
-    NewsletterModalComponent],
+    NewsletterModalComponent,
+    NewsletterDrawerComponent,
+    DrawersComponent],
   imports: [
     CommonModule,
     UiFeaturesRoutingModule,

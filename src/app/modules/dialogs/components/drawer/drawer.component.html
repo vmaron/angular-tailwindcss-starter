@@ -1,0 +1,11 @@
+<section [class.open]="display"
+         class="fixed inset-0 overflow-y-auto z-30 flex items-end bg-black bg-opacity-50 md:items-center md:justify-end">
+  <div (click)="$event.stopPropagation()"
+       aria-labelledby="modal-headline"
+       aria-modal="true"
+       class="w-full md:h-full px-6 py-4 overflow-hidden bg-white dark:bg-gray-800 md:max-w-xl flex flex-col"
+       role="dialog">
+    <ng-content></ng-content>
+  </div>
+</section>
+
