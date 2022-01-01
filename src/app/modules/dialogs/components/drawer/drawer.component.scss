@@ -3,7 +3,7 @@ section {
   opacity: 0;
 
   &.open {
-    visibility: inherit;
+    visibility: visible;
     opacity: 1;
   }
 
