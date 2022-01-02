@@ -3,14 +3,20 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  input, select, textarea {
+    @apply border rounded;
+  }
+}
+
 
 @layer components {
   /* Simple Card */
   .simple-card {
-    @apply min-w-0 p-4 bg-white rounded-lg drop-shadow-sm;
+    @apply min-w-0 p-4 bg-white rounded-lg shadow
   }
 
-  .theme-dark .simple-card {
+  .dark .simple-card {
     @apply bg-gray-800;
   }
 
@@ -18,7 +24,7 @@
     @apply mb-4 font-semibold text-gray-600;
   }
 
-  .theme-dark .simple-card__title {
+  .dark .simple-card__title {
     @apply text-gray-300;
   }
 
@@ -26,13 +32,13 @@
     @apply text-gray-600;
   }
 
-  .theme-dark .simple-card__body {
+  .dark .simple-card__body {
     @apply text-gray-400;
   }
 
   /* Inverse Card */
   .inverse-card {
-    @apply min-w-0 p-4 text-white bg-purple-600 rounded-lg drop-shadow-sm;
+    @apply min-w-0 p-4 text-white bg-purple-600 rounded-lg shadow
   }
 
   .inverse-card__title {
