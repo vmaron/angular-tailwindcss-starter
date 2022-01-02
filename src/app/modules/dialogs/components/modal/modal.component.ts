@@ -8,14 +8,12 @@ import {DialogsService} from '../../dialogs.service';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent<T> {
-  display = true;
   @Input() title: string;
 
   constructor(private dialogsService: DialogsService<T>) {
   }
 
   async close(): Promise<void> {
-    this.display = false;
     await this.dialogsService.close();
   }
 }

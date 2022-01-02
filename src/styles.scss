@@ -83,3 +83,17 @@
   }
 }
 
+@keyframes dialog-animation {
+  0% {
+    transform: scale(0)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+.dialog-animation {
+  animation-name: dialog-animation;
+  animation-duration: 0.5s;
+}
+
