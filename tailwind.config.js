@@ -6,12 +6,10 @@ const plugin = require('tailwindcss/plugin')
 const Color = require('color')
 
 module.exports = {
+  darkMode: 'class',
   purge: {
     enabled: enablePurge,
-    content: [
-      './src/!**!/!*.html',
-      './src/!**!/!*.scss'
-    ]
+    content: ['./src/**/*.html' /* ... */],
   },
   theme: {
     themeVariants: ['dark'],
