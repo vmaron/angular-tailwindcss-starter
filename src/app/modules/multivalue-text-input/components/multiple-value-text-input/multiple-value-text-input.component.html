@@ -1,0 +1,14 @@
+<div class="flex flex-wrap" *ngIf="values.length > 0">
+  <app-multiple-value-text-input-item
+    *ngFor="let v of values"
+    [value]="v"
+    (handleItemRemove)="handleRemoveItem($event)"
+  ></app-multiple-value-text-input-item>
+</div>
+<input
+  [(ngModel)]="value"
+  [ngModelOptions]="{standalone: true}"
+  (keydown)="handleKeyDown($event)"
+  (blur)="handleBlur($event)"
+  [placeholder]="placeholder"
+/>

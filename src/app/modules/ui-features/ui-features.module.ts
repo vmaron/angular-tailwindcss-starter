@@ -19,6 +19,7 @@ import {NewsletterModalComponent} from './components/newsletter-modal/newsletter
 import {NewsletterDrawerComponent} from './components/newsletter-drawer/newsletter-drawer.component';
 import {ModalsComponent} from './pages/modals/modals.component';
 import {DrawersComponent} from './pages/drawers/drawers.component';
+import {MultivalueTextInputModule} from '../multivalue-text-input/multivalue-text-input.module';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {DrawersComponent} from './pages/drawers/drawers.component';
     ChartingModule,
     DialogsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MultivalueTextInputModule
   ],
   providers: [FormBuilder]
 })
