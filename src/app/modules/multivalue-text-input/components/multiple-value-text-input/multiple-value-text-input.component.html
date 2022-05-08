@@ -1,14 +1,19 @@
-<div class="flex flex-wrap" *ngIf="values.length > 0">
+<div
+  (click)="handleContainerClick($event)"
+  class="group flex flex-wrap border mt-1 p-1 rounded block w-full text-sm dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
   <app-multiple-value-text-input-item
     *ngFor="let v of values"
     [value]="v"
     (handleItemRemove)="handleRemoveItem($event)"
   ></app-multiple-value-text-input-item>
+  <input
+    #input
+    [(ngModel)]="value"
+    [ngModelOptions]="{standalone: true}"
+    (keydown)="handleKeyDown($event)"
+    (blur)="handleBlur($event)"
+    autoSizeInput [extraWidth]="10"
+    class="border-none focus:outline-none inline m-1 text-sm px-1 dark:bg-gray-700 dark:text-white"
+  />
 </div>
-<input
-  [(ngModel)]="value"
-  [ngModelOptions]="{standalone: true}"
-  (keydown)="handleKeyDown($event)"
-  (blur)="handleBlur($event)"
-  [placeholder]="placeholder"
-/>
+

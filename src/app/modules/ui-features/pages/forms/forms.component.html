@@ -35,8 +35,12 @@
 
     <div class="mt-4 text-sm">
       <label class="block text-sm">
-        <span class="text-gray-700 dark:text-gray-400">Multiple Values Text Input</span>
-       <app-multiple-value-text-input [values]="['Red', 'Blue', 'Green']"></app-multiple-value-text-input>
+        <span class="text-gray-700 dark:text-gray-400">Multiple Values Text Input (enter values separated with COMMA, ENTER or SEMICOLON.)</span>
+       <app-multiple-value-text-input
+         (onItemAdded)="handleItemAdded($event)"
+         (onItemDeleted)="handleItemDeleted($event)"
+         [values]="values"
+       ></app-multiple-value-text-input>
       </label>
     </div>
 

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-multiple-value-text-input',
@@ -6,8 +6,17 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./multiple-value-text-input.component.scss']
 })
 export class MultipleValueTextInputComponent implements OnInit {
-  @Input() values: string[] = [];
-  @Input() placeholder = 'Enter values separate them with COMMA, ENTER or SEMICOLON.';
+  @ViewChild('input') input;
+  @Input()
+  get values(): string[] {
+    return this._values;
+  }
+
+  set values(value: string[]) {
+    this._values = value;
+  }
+  private _values: string[] = [];
+
   @Output() onItemAdded = new EventEmitter<{ value: string, newValues: string[] }>();
   @Output() onItemDeleted = new EventEmitter<{ value: string, newValues: string[] }>();
 
@@ -20,10 +29,9 @@ export class MultipleValueTextInputComponent implements OnInit {
   }
 
   handleRemoveItem(value: string) {
-    const currentValues = this.values;
+    const currentValues = this._values;
     const newValues = currentValues.filter(v => v !== value);
     this.onItemDeleted.emit({value, newValues});
-    this.values = newValues;
   }
 
   handleKeyDown($event: KeyboardEvent) {
@@ -34,12 +42,11 @@ export class MultipleValueTextInputComponent implements OnInit {
   }
 
   handleItemAdd(value: string) {
-    if (this.values.includes(value) || !value) {
+    if (this._values.includes(value) || !value) {
       this.value = '';
       return;
     }
-    const newValues = this.values.concat(value);
-    this.values = newValues;
+    const newValues = this._values.concat(value);
     this.value = '';
     this.onItemAdded.emit({value, newValues});
   }
@@ -47,5 +54,11 @@ export class MultipleValueTextInputComponent implements OnInit {
   handleBlur($event: FocusEvent) {
     $event.preventDefault();
     this.handleItemAdd(this.value);
+  }
+
+  handleContainerClick($event: MouseEvent) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.input.nativeElement.focus();
   }
 }
